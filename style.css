@@ -1,13 +1,8 @@
-
 * {
     text-decoration: none;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
@@ -41,7 +36,7 @@ nav {
     position: sticky;
     top: 0;
     background-color: rgb(5, 5, 0);
-    z-index: 10;
+    z-index: 1;
 }
 
 nav .wrapper {
@@ -52,6 +47,9 @@ nav .wrapper {
 
 nav ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 5px;
@@ -215,162 +213,6 @@ a.reservasi:hover {
     color: #4a2c13;
 }
 
-.book-table {
-    display: block;
-    width: 100%;
-    margin-top: 40px;
-    padding: 45px 30px;
-    background-color: #f8f3eb;
-    border-radius: 8px;
-}
-
-.book-table h2 {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 38px;
-    font-weight: normal;
-    text-align: center;
-    color: #e99a43;
-    margin-bottom: 10px;
-}
-
-.book-table .subjudul {
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.book-content {
-    display: grid;
-    grid-template-columns: 0.85fr 1.35fr;
-    align-items: stretch;
-    gap: 30px;
-}
-
-.book-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 15px;
-    min-width: 0;
-}
-
-.book-form input,
-.book-form select,
-.book-form textarea {
-    width: 100%;
-    padding: 14px 15px;
-    border: 1px solid #d8c8b5;
-    border-radius: 5px;
-    background-color: white;
-    color: #333;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    outline: none;
-}
-
-.book-form input:focus,
-.book-form select:focus,
-.book-form textarea:focus {
-    border-color: #e99a43;
-}
-
-.book-form textarea {
-    height: 110px;
-    resize: vertical;
-}
-
-.book-form button {
-    width: 150px;
-    padding: 14px;
-    margin-top: 5px;
-    border: none;
-    border-radius: 25px;
-    background-color: #f0960e;
-    color: white;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.book-form button:hover {
-    background-color: #c77b09;
-    transform: translateY(-2px);
-}
-
-.book-map {
-    width: 100%;
-    height: 520px;
-    min-height: 520px;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-}
-
-.book-map iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    min-height: 520px;
-    border: none;
-}
-
-.komentar {
-    width: 100%;
-    display: block;
-    padding: 40px 15px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-.komentar h2 {
-    font-family: 'Brush Script MT', cursive;
-    font-size: 36px;
-    font-weight: normal;
-    color: #222831;
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.daftar-komentar {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.kartu-komentar {
-    background-color: #222831;
-    color: white;
-    padding: 25px;
-    border-radius: 5px;
-    text-align: left;
-    min-height: 190px;
-}
-
-.kartu-komentar p {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    line-height: 23px;
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.kartu-komentar h3 {
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 17px;
-    margin-bottom: 5px;
-}
-
-.kartu-komentar span {
-    color: #ddd;
-    font-family: Arial, sans-serif;
-    font-size: 13px;
-}
-
 .footer {
     background-color: #050d09;
     color: white;
@@ -438,8 +280,76 @@ a.reservasi:hover {
     font-size: 13px;
 }
 
-@media screen and (max-width: 768px) {
+.komentar {
+    width: 100%;
+    display: block;
+    padding: 40px 15px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
 
+.komentar h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 36px;
+    font-weight: normal;
+    color: #222831;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.daftar-komentar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.kartu-komentar {
+    background-color: #222831;
+    color: white;
+    padding: 25px;
+    border-radius: 5px;
+    text-align: left;
+    min-height: 190px;
+}
+
+.kartu-komentar p {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.kartu-komentar h3 {
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.kartu-komentar span {
+    color: #ddd;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+    .daftar-komentar {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .komentar h2 {
+        font-size: 30px;
+    }
+
+    .kartu-komentar {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
     nav {
         line-height: normal;
         padding: 15px 0;
@@ -458,7 +368,6 @@ a.reservasi:hover {
 
     .menu {
         float: none;
-        width: 100%;
     }
 
     nav ul {
@@ -477,7 +386,7 @@ a.reservasi:hover {
         font-size: 13px;
     }
 
-    section#home {
+    section {
         flex-direction: column;
     }
 
@@ -519,22 +428,110 @@ a.reservasi:hover {
     .footer h3 {
         margin-bottom: 12px;
     }
+}
 
-    .daftar-komentar {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+/* Bagian Book A Table & Peta Diperbesar */
+.book-table {
+    width: 100%;
+    margin-top: 40px;
+    padding: 50px 35px;
+    background-color: #f8f3eb;
+    border-radius: 8px;
+}
 
-    .komentar h2 {
-        font-size: 30px;
-    }
+.book-table h2 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 38px;
+    font-weight: normal;
+    text-align: center;
+    color: #e99a43;
+    margin-bottom: 10px;
+}
 
-    .kartu-komentar {
-        padding: 20px;
-    }
+.book-table .subjudul {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 35px;
+}
 
+.book-content {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr; /* Peta dibuat jauh lebih besar dan leluasa */
+    align-items: stretch;
+    gap: 40px;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.book-form input,
+.book-form select,
+.book-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d8c8b5;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.book-form input:focus,
+.book-form select:focus,
+.book-form textarea:focus {
+    border-color: #e99a43;
+}
+
+.book-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.book-form button {
+    width: 150px;
+    padding: 13px;
+    margin-top: 5px;
+    border: none;
+    border-radius: 25px;
+    background-color: #f0960e;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.book-form button:hover {
+    background-color: #c77b09;
+    transform: translateY(-2px);
+}
+
+.book-map {
+    width: 100%;
+    min-height: 480px; /* Tinggi peta diperbesar agar lebih leluasa */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.book-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    border: none;
+}
+
+/* Tampilan Tablet dan HP */
+@media screen and (max-width: 768px) {
     .book-table {
-        padding: 30px 20px;
+        padding: 30px 15px;
     }
 
     .book-table h2 {
@@ -547,12 +544,11 @@ a.reservasi:hover {
     }
 
     .book-map {
-        height: 380px;
-        min-height: 380px;
+        min-height: 320px;
     }
 
     .book-map iframe {
-        min-height: 380px;
+        min-height: 320px;
     }
 
     .book-form button {
@@ -561,17 +557,8 @@ a.reservasi:hover {
 }
 
 @media screen and (max-width: 400px) {
-
     .daftar-menu {
         grid-template-columns: 1fr;
     }
-
-    .book-map {
-        height: 300px;
-        min-height: 300px;
     }
-
-    .book-map iframe {
-        min-height: 300px;
-    }
-}
+    
